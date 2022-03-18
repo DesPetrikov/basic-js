@@ -11,10 +11,6 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function getEmailDomain(email) {
-  const revStr = email.split('').reverse().join('')
-  const regExp = /[\S]{0,}?@/;
-  const withAt = revStr.match(regExp).toString();
-  return  withAt.split('').reverse().join('').slice(1)
-
+  return email.slice(email.lastIndexOf('@') + 1);
 }
 
