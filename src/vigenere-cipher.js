@@ -1,4 +1,4 @@
-import { NotImplementedError } from '../extensions/index.js';
+const { NotImplementedError } = require('../extensions/index.js');
 
 /**
  * Implement class VigenereCipheringMachine that allows us to create
@@ -19,7 +19,7 @@ import { NotImplementedError } from '../extensions/index.js';
  * reverseMachine.decrypt('AEIHQX SX DLLU!', 'alphonse') => '!NWAD TA KCATTA'
  *
  */
-export default class VigenereCipheringMachine {
+class VigenereCipheringMachine {
   constructor(type = true) {
     this.type = type;
   }
@@ -98,3 +98,7 @@ export default class VigenereCipheringMachine {
     return this.type ? result.join('') : result.reverse().join('');
   }
 }
+
+module.exports = {
+  VigenereCipheringMachine
+};

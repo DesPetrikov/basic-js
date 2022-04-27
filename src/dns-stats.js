@@ -1,4 +1,4 @@
-import { NotImplementedError } from '../extensions/index.js';
+const { NotImplementedError } = require('../extensions/index.js');
 
 /**
  * Given an array of domains, return the object with the appearances of the DNS.
@@ -22,7 +22,7 @@ import { NotImplementedError } from '../extensions/index.js';
  * }
  *
  */
-export default function getDNSStats(domains) {
+function getDNSStats(domains) {
   const arr = [];
   const obj = {};
   const separatedArr = domains.map((el) => el.split('.'));
@@ -42,3 +42,7 @@ export default function getDNSStats(domains) {
   }
   return obj;
 }
+
+module.exports = {
+  getDNSStats
+};
